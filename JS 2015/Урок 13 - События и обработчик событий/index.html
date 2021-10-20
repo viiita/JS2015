@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script type="text/javascript">
+		function buttonClick (button) {
+			alert("Вы нажали на кнопку. Кнопка имеет имя" + " " + button.name + ", a также value равно" + " " + button.value + ".");
+		}
+
+		let counter = 0;
+		function onMouseCounter (element) {
+			counter++;
+			element.innerHTML = "На этот текст было наведено "+ counter +" раз";
+		}
+	</script>
+</head>
+<!-- <body onload="alert('Странийца загружена')"> -->
+<body >
+	<input type="bitton" name="b" value="Click me" onclick="buttonClick (this)"/> 
+
+	<span onmousemove="onMouseCounter (this)">На этот текст было наведено 0 раз.</span>
+
+	 <!-- <select name="" id="" onchange="text">
+		 <option value="">vita</option>
+		 <option value="">xf</option>
+		 <option value="">sa</option>
+	 </select> -->
+</body>
+</html>

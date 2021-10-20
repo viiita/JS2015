@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let string = "Мобильная строка";
+
+		let test = "Длинная строки равна - " + string.length;
+		test += "\nСтрока в верхнем регистре - " + string.toUpperCase();
+		test += "\nСтрока в нижнем регистре - " + string.toLowerCase();
+		test += "\nОбрезка строки - " + string.substring(1, 5);
+		test += "\nТретий символ это - " + string.charAt(3);
+		test += "\n'Стро' начинается с индекса - " + string.indexOf("стро");
+		alert(test);
+	</script>
+	
+</body>
+</html>

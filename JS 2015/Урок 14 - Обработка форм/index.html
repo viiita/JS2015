@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script type="text/javascript">
+		 function valid (form) {
+			 let fail = false;
+			 let name = form.name.value;
+			 let email = form.email.value;
+			 let password = form.password.value;
+			 let RePassword = form.RePassword.value;
+			 let state = form.state.value;
+
+			 let adr_pattern = /[0-9a-z_-]+@[0-9a-z_-]+\.[a-z]{2,5}/i;
+
+			 if(name == "" || name == " " )
+			 	fail = "Вы не ввели свое имя.";
+			// else if(email.split('@').length -1 == 0)
+			// 	fail = "Вы не ввели email.";
+			else if(adr_pattern.test(email) == false)
+				fail = "Вы не ввели email.";
+			// else if(email == "" )
+			// 	fail = "Вы не ввели email.";
+			 else if(password == "" )
+			 	fail = "Вы не ввели пароль.";
+			 else if(password != RePassword )
+			 	fail = "Пароли не совподают.";
+			 else if(state == "" )
+			 	fail = "Укажите пол.";
+			 if(fail) 
+				alert(fail);
+			 else 
+				 window.location = "http://google.com";
+
+			 
+		 }
+
+	</script>
+</head>
+<body>
+	<form action="" method="post" name="test" id="form">
+		<label for="name">Имя:</label>
+		<input type="text" name="name" placeholder="Имя" id="name" /><br/><br/>
+		<label for="name">Email:</label>
+		<input type="text" name="email" placeholder="email" id="email" /><br/><br/>
+		<label for="password">Пароль:</label>
+		<input type="password" name="password" placeholder="Пароль" id="password"/><br/><br/>
+		<label for="RePassword">Проверка пароля:</label>
+		<input type="password" name="RePassword" placeholder="Введите пароль" id="RePassword"/><br/><br/>
+		<span>Пол:</span>
+		<input type="radio" name="state"  id="#state" value="Мужской" for="male"/>
+		<label for="male">Мужской</label>
+		<input type="radio" name="state"  id="#state" value="Женский" for="female"/>
+		<label for="female">Женский</label><br/><br/>
+		<input type="button" onclick="valid(document.getElementById(`form`))" name="submit" value="Готово">
+	</form>
+	
+</body>
+</html>
